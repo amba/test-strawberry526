@@ -26,6 +26,5 @@ install:
 build_script:
   - perl Makefile.PL
   - '%make_name%'
-  - prove -bv t xt
-
+  - '%make_name%' test
       
