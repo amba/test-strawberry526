@@ -1,0 +1,31 @@
+environment:
+  matrix:
+    - strawberry_version: 5.26.0.1 --x86
+      make_name: gmake
+      
+    - strawberry_version: 5.26.0.1
+      make_name: gmake
+      
+    - strawberry_version: 5.20.3.3 --x86
+      make_name: dmake
+      
+    - strawberry_version: 5.20.3.3
+      make_name: dmake
+
+    - strawberry_version: 5.18.4.1 --x86
+      make_name: dmake
+
+    - strawberry_version: 5.18.4.1
+      make_name: dmake
+
+install:
+  - choco install --allowemptychecksum strawberryperl --version %strawberry_version%
+  - path C:\strawberry\perl\bin;C:\strawberry\perl\site\bin;C:\strawberry\c\bin;%PATH%
+  - perl -V
+  
+build_script:
+  - perl Makefile.PL
+  - '%make_name%'
+  - prove -bv t xt
+
+      

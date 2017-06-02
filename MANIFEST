@@ -1,0 +1,10 @@
+Changes
+Makefile.PL
+MANIFEST
+Perl526XS.xs
+ppport.h
+README
+t/Perl526XS.t
+fallback/const-c.inc
+fallback/const-xs.inc
+lib/Perl526XS.pm
